@@ -52,9 +52,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Navbar = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
-  const handleClik = () => {
-    dispatch(fetchProductData(search));
-  };
   return (
     <div style={{ flexGrow: 1, margin: "80px auto" }}>
       <AppBar position="fixed" style={{ backgroundColor: "#8296ce" }}>
@@ -79,11 +76,6 @@ const Navbar = () => {
                     dispatch(fetchProductData());
                   }
                   setSearch(e.target.value);
-                }}
-                onKeyPress={(event) => {
-                  if (event.key === "Enter") {
-                    handleClik();
-                  }
                 }}
               />
             </Search>
